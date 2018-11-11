@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Chartjs from 'chart.js'
+// import Chartjs from 'chart.js'
 var LineChart = require("react-chartjs").Line;
 
 class PieChart extends Component {

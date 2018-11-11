@@ -6,6 +6,11 @@ import Step from '@material-ui/core/Step';
 import StepButton from '@material-ui/core/StepButton';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Tooltip from '@material-ui/core/Tooltip';
+import AddIcon from '@material-ui/icons/Add';
+import { Link } from 'react-router-dom';
+
+
 
 const styles = theme => ({
   root: {
@@ -29,24 +34,30 @@ const styles = theme => ({
     justifyContent:'center',
     alignItems:'center',
     height: '100vh'
+  },
+  margin: {
+      marginLeft: 700,
+      marginBottom: 60,
+      position: 'absolute'
   }
 });
 
 function getSteps() {
-  return ['Ir ao cartório', 'Assinar a x', 'Viajar a Brasilia', 'Ir ao congresso', 'XPTO'];
+  return ['Petição inicial', 'Follow up', 'Decisão judicial', 'Contra-razão', 'Follow up'];
 }
 
 function getStepContent(step) {
-  switch (step) {
-    case 0:
-      return 'Primeiro passo: Eu como advogado, vou ao cartório';
-    case 1:
-      return 'Segundo passo: Eu faço x';
-    case 2:
-      return 'Terceiro passo: Eu faço y';
-    default:
-      return 'Quarto passo: Eu faço z';
-  }
+//   switch (step) {
+//     case 0:
+//       return 'Eu como advogado, vou ao cartório';
+//     case 1:
+//       return 'Segundo passo: Eu faço x';
+//     case 2:
+//       return 'Terceiro passo: Eu faço y';
+//     default:
+//       return 'Quarto passo: Eu faço z';
+//   }
+return ''
 }
 
 class HorizontalNonLinearAlternativeLabelStepper extends React.Component {
@@ -177,8 +188,8 @@ class HorizontalNonLinearAlternativeLabelStepper extends React.Component {
           {steps.map((label, index) => {
             const props = {};
             const buttonProps = {};
-            if (this.isStepOptional(index)) {
-            //   buttonProps.optional = <Typography variant="caption">Optional</Typography>;
+            if (this.isStepComplete(index)) {
+              buttonProps.optional = <Typography variant="caption">E-mail enviado para gabriel03899@hotmail.com!</Typography>;
             }
             if (this.isStepSkipped(index)) {
               props.completed = false;
@@ -200,7 +211,7 @@ class HorizontalNonLinearAlternativeLabelStepper extends React.Component {
           {this.allStepsCompleted() ? (
             <div>
               <Typography className={classes.instructions}>
-                All steps completed - you&quot;re finished
+                Parabéns, todos os passos foram completos!
               </Typography>
               <Button onClick={this.handleReset}>Reset</Button>
             </div>
@@ -245,6 +256,11 @@ class HorizontalNonLinearAlternativeLabelStepper extends React.Component {
                     </Button>
                   ))}
               </div>
+                <Tooltip title="Add" className={classes.margin}>
+                    <Button variant="fab" color="primary" aria-label="Add" className={styles.fab}>
+                        <Link to="/signup"> <AddIcon /> </Link>
+                    </Button>
+                </Tooltip>
             </div>
           )}
         </div>

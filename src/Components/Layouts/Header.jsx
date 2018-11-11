@@ -27,6 +27,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import {withRouter} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 
 const drawerWidth = 240;
@@ -192,7 +193,7 @@ class Header extends React.Component {
     if(this.props.location.pathname.substring(0,7) === '/client') {
         this.arr = ['Meus advogados'];
     } else {
-        this.arr = ['Meus processos'];
+        this.arr = ['Banco de processos'];
     }
     const { anchorEl, mobileMoreAnchorEl } = this.state;
     // eslint-disable-next-line
@@ -259,7 +260,7 @@ class Header extends React.Component {
               <MenuIcon />
             </IconButton>
             <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-              Nome da plataforma
+              LawBlock
             </Typography>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
@@ -326,9 +327,9 @@ class Header extends React.Component {
           </List>
           <Divider />
           <List>
-            {['All mail'].map((text, index) => (
+            {['Cadastrar'].map((text, index) => (
               <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                <ListItemIcon>{index % 2 === 0 ? <Link to="/signup"><InboxIcon /></Link> : <MailIcon />}</ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
             ))}

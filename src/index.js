@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AppAdv from './Components/home-adv/App';
-import AppClient from './Components/home-cli/App';
-import AppAdvDetails from './Components/adv-details/App';
+// import AppClient from './Components/home-cli/App';
+import AdvSignup from './Components/adv-signup/App';
 import AppHome from './Components/adv-me/App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
@@ -13,7 +13,7 @@ ReactDOM.render(
         <Switch>
             <Route path="/" exact={true} component={AppAdv} />
             <Route path="/me" exact component={AppHome} />
-            {/* <Route path="/client/:id" exact component={AppAdvDetails} /> */}
+            <Route path="/signup" exact component={AdvSignup} />
         </Switch>
     </ BrowserRouter>
     , document.getElementById('root'));

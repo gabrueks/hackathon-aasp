@@ -15,7 +15,7 @@ const img = 'https://st2.depositphotos.com/1007566/11547/v/950/depositphotos_115
 
 const styles = theme => ({
   root: {
-    width: '100%',
+    width: '10%',
     marginTop: theme.spacing.unit * 3,
     overflowX: 'scroll',
     position: 'relative',
