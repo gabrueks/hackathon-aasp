@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 
-import Stepper from './stepper';
+import PieChart from './Chart';
 import { Header, Footer } from '../Layouts';
 
 export default class extends Component {
@@ -9,7 +9,7 @@ export default class extends Component {
         return (
             <Fragment>
                 <Header/>
-                <Stepper/>
+                {/* <PieChart/> */}
                  <Footer
                  />
              </Fragment>
