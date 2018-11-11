@@ -5,14 +5,10 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
-import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
 import { TextField } from '@material-ui/core';
 import {withRouter, Link} from 'react-router-dom';
 import { Button } from '@material-ui/core';
-
-const img = 'https://st2.depositphotos.com/1007566/11547/v/950/depositphotos_115475494-stock-illustration-young-male-profile-avatar-isolated.jpg';
 
 const cardStyle = {
     width: '50%',
