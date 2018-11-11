@@ -1,12 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import AppAdv from './Components/home-adv/App';
+import AppClient from './Components/home-cli/App';
+import AppAdvDetails from './Components/adv-details/App';
 import * as serviceWorker from './serviceWorker';
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+    <BrowserRouter>
+        <Switch>
+            <Route path="/" exact={true} component={AppAdv} />
+            <Route path="/client" exact component={AppClient} />
+            <Route path="/client/:id" exact component={AppAdvDetails} />
+        </Switch>
+    </ BrowserRouter>
+    , document.getElementById('root'));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.unregister();
